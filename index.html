@@ -10,16 +10,54 @@
 <title>Weiguo Pian's Homepage</title>
 
 <style>
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
 @media screen and (max-device-width: 480px){
   body{
 	-webkit-text-size-adjust: none;
   }
 }
 p { font-size: 16px; }
+
 h1 { padding: 0; margin: 0; font-size: 30px; }
-h2 { font-size: 25px; margin: 0; padding: 0; border-bottom: 2px solid #aaaaaa; }
-body { padding: 0; font-family: Georgia; font-size: 16px; background-color: #eeeeee; }
-.container { width: 940px; margin: -22px auto; border-radius: 0px;  background-color: #fff; padding: 20px;  clear: both;}
+
+h2 { font-size: 25px; margin: 0; padding: 0; border-bottom: 2px solid #e6e6e6; }
+
+body {
+  background-color: #ffffff;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+
+.container{
+    width: 1200px; 
+    margin: -22px auto; 
+    border-radius: 0px;  
+    background-color: #fff; 
+    padding: 20px;  
+    clear: both;
+    scroll-margin-top: 30px;}
+
+/* .container { width: 940px; margin: 0 auto 26px auto; border-radius: 0px; background-color: #fff; padding: 20px; clear: both; } */
+
+/* .container { 
+  width: 940px; 
+  margin: 0 auto;
+  border-radius: 0px;  
+  background-color: #fff; 
+  padding: 20px;  
+  clear: both;
+} */
+
+
 #me { margin-left: 30px; margin-right: 20px; border-radius: 15px; float: left; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -27,10 +65,100 @@ a, a:visited { color: #13aabbf5; }
 .indent-parent {
     padding-left: 15px;
 }
+
+
+
+.topnav-wrap{
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 0;
+  padding: 10px 0;          /* ✅ 原来太大，这里压低高度 */
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+
+/* .topnav{
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  gap: 34px;
+  padding-left: 0;
+  font-family: Georgia;
+  flex-wrap: wrap;          
+  row-gap: 6px;             
+} */
+
+.topnav{
+  width: 100%;                 /* ✅ 让导航占满整页 */
+  margin: 0;                   /* ✅ 不要 auto 居中 */
+  padding-left: 24px;          /* ✅ 离左边缘一点点（想贴死就改 0） */
+
+  display: flex;
+  justify-content: flex-start; /* ✅ 从最左开始排 */
+  gap: 34px;
+
+  font-family: Georgia;
+  flex-wrap: wrap;
+  row-gap: 6px;
+  box-sizing: border-box;      /* ✅ padding 不会撑爆宽度 */
+}
+
+
+.topnav a{
+  font-size: 17px;
+  line-height: 1.2;
+  color: #9a9a9a;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+/* Homepage：只改颜色 + 字重，不改大小 */
+.topnav a.nav-home{
+  color: #6f6f6f;
+  font-weight: 600;
+}
+
+
+.topnav a:hover{
+  color: #13aabbf5;
+  /* text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 </style>
 </head>
 
 <body>
+
+
+
+    <div class="topnav-wrap">
+    <div class="topnav">
+        <!-- <a href="#home">Homepage</a> -->
+        <a class="nav-home" href="#">Homepage</a>
+        <a href="#about">About Me</a>
+        <a href="#news">News</a>
+        <a href="#pub">Publications</a>
+        <a href="#edu">Education</a>
+        <a href="#work">Working Experience</a>
+        <a href="#service">Academic Services</a>
+        <a href="#teach">Teaching</a>
+    </div>
+    </div>
+
+    <br><br>
+
 	<div class="container">
 		<div>
 			<img src="img/Me.jpeg" height="180px" id="me">
@@ -54,20 +182,19 @@ a, a:visited { color: #13aabbf5; }
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" id="about">
         <h2>About Me</h2>
 		<p aligh="justify">
             I'm a Ph.D. candidate at The University of Texas at Dallas, advised by Prof. <a href="https://www.yapengtian.com/">Yapeng Tian</a> and Prof. <a href="https://yunhuiguo.github.io/">Yunhui Guo</a>.
-            <br><br>
 
             Before that, I received my master and bachelor degree from <a href="http://english.cqu.edu.cn/">Chongqing University, China</a> in 2021 and 2018 respectively. 
+            
             <br><br>
-
-            My research mainly focuses on Audio-Visual Learning, Continual Learning, Multimodal Large Language Models, and Generative Models, etc.
+            My research interests lie in machine learning and computer vision, focusing on Audio-Visual Learning, Continual Learning, Multimodal Large Language Models, and Generative Models.
 		</p>
 	</div>
 
-    <div class="container">
+    <div class="container" id="news">
 		<h2>News</h2>
 		<p align="justify">
             [May 2025]: Join Amazon Prime Video as an Applied Scientist Intern.<br><br>
@@ -79,7 +206,7 @@ a, a:visited { color: #13aabbf5; }
 		</p>
 	</div>
 
-    <div class="container">
+    <div class="container" id="edu">
 		<h2>Education</h2>
 		<p align="justify">
         <ul class="indent-parent">
@@ -102,7 +229,7 @@ a, a:visited { color: #13aabbf5; }
 		</p>
 	</div>
 
-	<div class="container">
+	<div class="container" id="pub">
 		<h2>Selected Publications</h2>
         <sup>‡</sup> indicates equal contribution.
         <ul class="indent-parent">
@@ -198,7 +325,7 @@ a, a:visited { color: #13aabbf5; }
 
 	</div>
 
-	<div class="container">
+	<div class="container" id="work">
 		<h2>Working Experience</h2>
 		<p align="justify">
             <ul class="indent-parent">
@@ -226,7 +353,7 @@ a, a:visited { color: #13aabbf5; }
 		</p>
 	</div>
 
- 	<div class="container">
+ 	<div class="container" id="service">
         <h2>Academic Services</h2>
         <p align="justify">
             <ul class="indent-parent">
@@ -245,7 +372,7 @@ a, a:visited { color: #13aabbf5; }
         </p>
 	</div>
 
-    <div class="container">
+    <div class="container" id="teach">
         <h2>Teaching</h2>
         <p align="justify">
             <ul class="indent-parent">
@@ -267,7 +394,7 @@ a, a:visited { color: #13aabbf5; }
         </p>
 	</div>
 
-    <div class="container">
+    <!-- <div class="container">
         <h2>Honors and Awards</h2>
         <p align="justify">
             <ul class="indent-parent">
@@ -276,7 +403,7 @@ a, a:visited { color: #13aabbf5; }
                 <li>A-Class Scholarship for Graduate Students of Chongqing University, 2018</li>
             </ul>
         </p>
-	</div>
+	</div> -->
 
 <br>
 <br>
